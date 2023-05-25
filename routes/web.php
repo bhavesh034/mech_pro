@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+// Frontend
+Route::get('/', [App\Http\Controllers\Frontend\DashboardController::class, 'index']);
+
+// Backend
+Route::get('/admin', [App\Http\Controllers\Backend\DashboardController::class, 'index']);
+
+
